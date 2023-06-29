@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from myapp.views import hello_world
 from myapp.views import add_data
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('rest_framework.urls')),
     path('hello/', hello_world, name='hello_world'),
     path('addData/', add_data, name='add_data'),
 ]
